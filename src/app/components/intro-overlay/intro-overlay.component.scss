@@ -1,0 +1,255 @@
+@use '../../design-system' as *;
+
+:host {
+  position: fixed;
+  inset: 0;
+  z-index: $z-overlay;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.intro-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+// ── Aurora veil ────────────────────────────────────────────────────────────
+
+.veil {
+  position: absolute;
+  inset: 0;
+  background: #ece7e0;
+  overflow: hidden;
+}
+
+// ── Aurora gradient blobs ──────────────────────────────────────────────────
+
+@keyframes blobDrift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(22px, -14px) scale(1.07); }
+  66%       { transform: translate(-14px, 16px) scale(0.95); }
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(55px);
+
+  &.b1 {
+    width: 55%; height: 50%;
+    background: rgba(255, 155, 175, 0.58);
+    top: -8%; left: -10%;
+    animation: blobDrift 9s ease-in-out infinite;
+  }
+  &.b2 {
+    width: 50%; height: 55%;
+    background: rgba(185, 150, 235, 0.54);
+    top: 25%; right: -12%;
+    animation: blobDrift 11s 2s ease-in-out infinite reverse;
+  }
+  &.b3 {
+    width: 55%; height: 45%;
+    background: rgba(140, 195, 240, 0.48);
+    bottom: -8%; left: 10%;
+    animation: blobDrift 10s 1s ease-in-out infinite;
+  }
+  &.b4 {
+    width: 40%; height: 40%;
+    background: rgba(225, 195, 248, 0.50);
+    top: 8%; right: 18%;
+    animation: blobDrift 8s 3s ease-in-out infinite reverse;
+  }
+  &.b5 {
+    width: 35%; height: 38%;
+    background: rgba(255, 205, 215, 0.42);
+    top: 45%; left: 25%;
+    animation: blobDrift 12s 1.5s ease-in-out infinite;
+  }
+}
+
+// ── Prism light streaks ────────────────────────────────────────────────────
+
+@keyframes streakFade {
+  0%, 100% { opacity: 0; }
+  25%, 75%  { opacity: 1; }
+}
+
+.streak {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 180, 200, 0.4),
+    rgba(200, 170, 255, 0.4),
+    rgba(170, 215, 255, 0.4),
+    transparent
+  );
+
+  &.s1 { width: 38%; top: 28%; left: 8%;  transform: rotate(-12deg); animation: streakFade 7s 0.8s ease-in-out infinite; }
+  &.s2 { width: 50%; top: 60%; right: 4%; transform: rotate(9deg);   animation: streakFade 8s 2.5s ease-in-out infinite; }
+  &.s3 { width: 28%; top: 78%; left: 32%; transform: rotate(-6deg);  animation: streakFade 6s 1.6s ease-in-out infinite; }
+}
+
+// ── Crystal light flares ───────────────────────────────────────────────────
+
+@keyframes flarePulse {
+  0%, 100% { opacity: 0; transform: scale(0.4); }
+  50%       { opacity: 0.75; transform: scale(1.2); }
+}
+
+.flare {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 225, 240, 0.55) 30%,
+    transparent 70%
+  );
+  filter: blur(3px);
+
+  &.f1 { width: 48px; height: 48px; top: 16%; left: 18%;  animation: flarePulse 5s 0s    ease-in-out infinite; }
+  &.f2 { width: 28px; height: 28px; top: 52%; right: 16%; animation: flarePulse 4s 2s    ease-in-out infinite; }
+  &.f3 { width: 36px; height: 36px; bottom: 18%; left: 58%; animation: flarePulse 6s 1.2s ease-in-out infinite; }
+}
+
+// ── 4-point sparkle stars ──────────────────────────────────────────────────
+
+@keyframes crystalTwinkle {
+  0%, 100% { opacity: 0; transform: scale(0.3) rotate(0deg); }
+  45%, 55%  { opacity: 0.85; transform: scale(1.15) rotate(18deg); }
+}
+
+.spark {
+  position: absolute;
+  color: rgba(42, 28, 36, 0.62);
+  line-height: 1;
+
+  &.sp1 { top: 12%; left: 10%;  font-size: 1.3rem; animation: crystalTwinkle 3.2s 0s    ease-in-out infinite; }
+  &.sp2 { top: 18%; right: 8%;  font-size: 0.85rem; animation: crystalTwinkle 2.8s 0.6s  ease-in-out infinite; }
+  &.sp3 { top: 6%;  left: 52%;  font-size: 0.6rem;  animation: crystalTwinkle 3.6s 1.8s  ease-in-out infinite; }
+  &.sp4 { top: 68%; left: 6%;   font-size: 1.0rem;  animation: crystalTwinkle 3.0s 0.3s  ease-in-out infinite; }
+  &.sp5 { top: 74%; right: 10%; font-size: 0.75rem; animation: crystalTwinkle 2.6s 1.2s  ease-in-out infinite; }
+  &.sp6 { bottom: 12%; left: 40%; font-size: 0.9rem; animation: crystalTwinkle 3.4s 2.4s ease-in-out infinite; }
+  &.sp7 { top: 40%; left: 4%;   font-size: 0.55rem; animation: crystalTwinkle 4.0s 0.9s  ease-in-out infinite; }
+  &.sp8 { top: 35%; right: 5%;  font-size: 0.65rem; animation: crystalTwinkle 3.8s 1.5s  ease-in-out infinite; }
+}
+
+// ── Text stage ─────────────────────────────────────────────────────────────
+
+.text-stage {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// ── Frosted glass card ─────────────────────────────────────────────────────
+
+@keyframes glassShimmer {
+  0%        { transform: translateX(-120%) skewX(-15deg); }
+  50%, 100% { transform: translateX(280%) skewX(-15deg); }
+}
+
+.glass-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $sp-7;
+  padding: 40px 52px;
+  background: rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid rgba(210, 185, 230, 0.55);
+  border-radius: 20px;
+  box-shadow:
+    0 8px 48px rgba(185, 150, 215, 0.18),
+    0 2px 16px rgba(255, 175, 200, 0.12),
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.90),
+    inset 0 -1px 0 rgba(200, 170, 225, 0.18),
+    inset 1.5px 0 0 rgba(255, 255, 255, 0.55),
+    inset -1px 0 0 rgba(200, 170, 225, 0.15);
+  overflow: hidden;
+}
+
+// Sliding shimmer (glass light reflection)
+.glass-shimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.22) 45%,
+    rgba(255, 255, 255, 0.08) 55%,
+    transparent 65%
+  );
+  animation: glassShimmer 5s 1.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+// ── Text lines ─────────────────────────────────────────────────────────────
+
+.line {
+  font-family: $font-family;
+  font-weight: 900;
+  font-size: $fs-4xl;
+  color: rgba(42, 28, 36, 0.82);
+  letter-spacing: 8px;
+  margin: 0;
+  position: relative;
+  // Subtle iridescent text shadow
+  text-shadow:
+    0 1px 2px rgba(255, 255, 255, 0.6),
+    0 0 20px rgba(200, 170, 230, 0.25);
+}
+
+// ── Ornament ───────────────────────────────────────────────────────────────
+
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: $sp-4;
+  transform-origin: center center;
+}
+
+.orn-line {
+  display: block;
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 155, 180, 0.7),
+    rgba(185, 155, 240, 0.7),
+    rgba(155, 200, 245, 0.7),
+    transparent
+  );
+}
+
+.orn-star {
+  font-size: 0.55rem;
+  color: rgba(42, 28, 36, 0.55);
+  display: block;
+}
+
+// ── Pearlescent bloom ──────────────────────────────────────────────────────
+
+.bloom {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 1.0)   0%,  transparent 20%),
+    radial-gradient(circle at 50% 50%, rgba(255, 235, 245, 0.94) 12%,  transparent 38%),
+    radial-gradient(circle at 50% 50%, rgba(220, 195, 250, 0.78) 25%,  transparent 54%),
+    radial-gradient(circle at 50% 50%, rgba(195, 228, 255, 0.58) 38%,  transparent 65%),
+    radial-gradient(circle at 50% 50%, rgba(255, 215, 230, 0.35) 50%,  transparent 74%),
+    radial-gradient(circle at 50% 50%, rgba(235, 228, 248, 0.18) 62%,  transparent 80%);
+  transform-origin: center center;
+}

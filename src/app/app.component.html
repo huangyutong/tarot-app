@@ -1,0 +1,14 @@
+<app-background-layer></app-background-layer>
+
+@if (phase === 'question') {
+  <app-question-input (submitted)="onQuestionSubmitted($event)"></app-question-input>
+}
+
+@if (phase === 'spread') {
+  <app-card-spread
+    [question]="currentQuestion"
+    (cardPicked)="onCardPicked($event)"
+  ></app-card-spread>
+}
+
+<app-intro-overlay></app-intro-overlay>

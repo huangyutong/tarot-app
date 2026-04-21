@@ -1,0 +1,54 @@
+@if (!done) {
+  <div class="intro-overlay">
+
+    <!-- Aurora veil (fades out via GSAP) -->
+    <div #veil class="veil">
+
+      <!-- Aurora gradient blobs -->
+      <div class="blob b1"></div>
+      <div class="blob b2"></div>
+      <div class="blob b3"></div>
+      <div class="blob b4"></div>
+      <div class="blob b5"></div>
+
+      <!-- Prism light streaks -->
+      <div class="streak s1"></div>
+      <div class="streak s2"></div>
+      <div class="streak s3"></div>
+
+      <!-- Crystal light flares -->
+      <div class="flare f1"></div>
+      <div class="flare f2"></div>
+      <div class="flare f3"></div>
+
+      <!-- 4-point sparkle stars -->
+      <span class="spark sp1">✦</span>
+      <span class="spark sp2">✦</span>
+      <span class="spark sp3">✧</span>
+      <span class="spark sp4">✦</span>
+      <span class="spark sp5">✧</span>
+      <span class="spark sp6">✦</span>
+      <span class="spark sp7">✧</span>
+      <span class="spark sp8">✦</span>
+
+    </div>
+
+    <!-- Narrative text on frosted glass card -->
+    <div #textStage class="text-stage">
+      <div class="glass-card">
+        <div class="glass-shimmer"></div>
+        <p #line1 class="line">在星光與靜默之間</p>
+        <div #ornament class="ornament">
+          <span class="orn-star">✦</span>
+          <span class="orn-line"></span>
+          <span class="orn-star">✦</span>
+        </div>
+        <p #line2 class="line">命運正在等你揭曉</p>
+      </div>
+    </div>
+
+    <!-- Pearlescent bloom burst -->
+    <div #bloom class="bloom"></div>
+
+  </div>
+}

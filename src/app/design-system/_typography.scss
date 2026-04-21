@@ -1,0 +1,40 @@
+// ===== Typography =====
+@use 'tokens' as *;
+
+@mixin font-heading {
+  font-family: $font-family;
+  font-weight: 900;
+}
+
+@mixin font-body {
+  font-family: $font-family;
+  font-weight: 400;
+}
+
+@mixin gold-gradient-text {
+  // Fixed teal base — rainbow glass sheen sweeps across like light on crystal
+  background: linear-gradient(
+    110deg,
+    var(--gold-dark)           0%,
+    var(--gold)                20%,
+    rgba(255, 210, 220, 0.95)  34%,
+    rgba(200, 235, 252, 1)     43%,
+    rgba(218, 190, 252, 0.95)  52%,
+    rgba(180, 248, 224, 0.9)   61%,
+    rgba(215, 242, 255, 0.95)  70%,
+    var(--gold)                80%,
+    var(--gold-dark)           100%
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: glassSheen 9s ease-in-out infinite;
+  filter:
+    drop-shadow(0 1px 4px rgba(35, 84, 91, 0.35))
+    drop-shadow(0 0 18px rgba(178, 225, 235, 0.45));
+}
+
+@mixin letter-spacing($size: 3px) {
+  letter-spacing: $size;
+}

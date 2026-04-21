@@ -1,0 +1,43 @@
+// ===== Shared Mixins =====
+@use 'tokens' as *;
+
+@mixin glassmorphism-panel($bg-alpha: 0.4, $border-alpha: 0.08) {
+  background: rgba(255, 255, 255, $bg-alpha);
+  border: 1px solid rgba($gold, $border-alpha);
+  border-radius: $radius-md;
+  backdrop-filter: blur(6px);
+}
+
+@mixin gold-border($alpha: 0.25) {
+  border: 1px solid rgba(35, 84, 91, $alpha);
+}
+
+@mixin gold-border-gradient {
+  border: 1.5px solid var(--gold-dark);
+}
+
+@mixin ornament-line($width: 100px) {
+  content: '';
+  height: 1px;
+  width: $width;
+  background: linear-gradient(90deg, transparent, var(--gold-dark), transparent);
+}
+
+@mixin hover-lift($y: -3px) {
+  transition: all 0.4s ease;
+  &:hover {
+    transform: translateY($y);
+  }
+}
+
+@mixin card-face-base {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: $radius-lg;
+  overflow: hidden;
+}
+
+@mixin suit-accent($colors) {
+  background: linear-gradient(90deg, nth($colors, 1), nth($colors, 2), nth($colors, 3));
+}

@@ -1,0 +1,96 @@
+// ===== Design Tokens =====
+
+// Colors
+$gold: #23545B;
+$gold-light: #3a8090;
+$gold-dark: #1a3d42;
+$crimson: #ffcccc;
+$crimson-dark: #e8a8a8;
+$purple-deep: #F8F5FA;
+$parchment: #fde8f0;
+$text-primary: #1e4a50;
+$text-muted: #7a9fa5;
+$text-reading: #3a6a72;
+$text-gold: #23545B;
+
+// Suit Colors
+$suit-major: (#b8a0d8, #d8c0f0, #b8a0d8);
+$suit-wands: (#ff9999, #ffcccc, #ff9999);
+$suit-cups: (#23545B, #3a8090, #23545B);
+$suit-swords: (#90b8c0, #bcd8e0, #90b8c0);
+$suit-pentacles: (#c0a0b8, #e0c0d0, #c0a0b8);
+
+// Typography
+$font-family: 'Noto Sans TC', sans-serif;
+
+// Font Sizes
+$fs-xxs: 0.55rem;
+$fs-xs: 0.65rem;
+$fs-sm: 0.7rem;
+$fs-base: 0.82rem;
+$fs-md: 0.85rem;
+$fs-body: 0.9rem;
+$fs-lg: 0.95rem;
+$fs-xl: 1rem;
+$fs-2xl: 1.05rem;
+$fs-3xl: 1.1rem;
+$fs-4xl: 1.2rem;
+$fs-5xl: 1.6rem;
+$fs-6xl: 2rem;
+$fs-7xl: 2.8rem;
+
+// Spacing
+$sp-1: 4px;
+$sp-2: 6px;
+$sp-3: 8px;
+$sp-4: 10px;
+$sp-5: 12px;
+$sp-6: 14px;
+$sp-7: 16px;
+$sp-8: 20px;
+$sp-9: 24px;
+$sp-10: 28px;
+$sp-11: 32px;
+$sp-12: 40px;
+$sp-13: 48px;
+$sp-14: 60px;
+$sp-15: 80px;
+
+// Border Radius
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 14px;
+$radius-xl: 20px;
+$radius-pill: 50px;
+$radius-circle: 50%;
+
+// Shadows
+$shadow-card: 0 0 15px rgba($gold, 0.1), 0 8px 32px rgba(0, 0, 0, 0.08);
+$shadow-card-hover: 0 0 30px rgba($gold, 0.2), 0 12px 40px rgba(0, 0, 0, 0.12);
+$shadow-card-front: 0 0 20px rgba($gold, 0.15), 0 10px 40px rgba(0, 0, 0, 0.08);
+$shadow-btn-hover: 0 8px 30px rgba($crimson, 0.3), 0 0 20px rgba($gold, 0.15);
+
+// Z-index
+$z-bg: 0;
+$z-particles: 1;
+$z-content: 2;
+$z-overlay: 100;
+
+// Card Dimensions
+$card-width: 190px;
+$card-height: 310px;
+$card-width-tablet: 155px;
+$card-height-tablet: 260px;
+$card-width-mobile: 200px;
+$card-height-mobile: 320px;
+
+// CSS Custom Properties (runtime theming)
+:root {
+  --gold: #{$gold};
+  --gold-light: #{$gold-light};
+  --gold-dark: #{$gold-dark};
+  --crimson: #{$crimson};
+  --crimson-dark: #{$crimson-dark};
+  --purple-deep: #{$purple-deep};
+  --parchment: #{$parchment};
+}

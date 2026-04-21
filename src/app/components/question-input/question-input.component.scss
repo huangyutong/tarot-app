@@ -1,0 +1,240 @@
+@use '../../design-system' as *;
+
+// ── Keyframes ──────────────────────────────────────────────────────────────
+
+@keyframes spin-cw {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes spin-ccw {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50%       { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes floatStar {
+  0%   { transform: translateY(0)   rotate(0deg);   opacity: 0.6; }
+  50%  { transform: translateY(-18px) rotate(20deg); opacity: 0.9; }
+  100% { transform: translateY(0)   rotate(0deg);   opacity: 0.6; }
+}
+
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+// ── Host ───────────────────────────────────────────────────────────────────
+
+:host {
+  position: fixed;
+  inset: 0;
+  z-index: $z-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; // let background receive events by default
+}
+
+// ── Page ───────────────────────────────────────────────────────────────────
+
+.question-page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pageEnter 1.2s 5.5s ease both; // appear after intro ends (~5s)
+}
+
+// ── Floating stars ─────────────────────────────────────────────────────────
+
+.stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  font-size: 0.85rem;
+  color: #FF87A2;
+  animation: floatStar 4s ease-in-out infinite;
+
+  &.s1 { top: 12%; left: 10%;  animation-delay: 0s;    font-size: 0.7rem;  color: #D4A8C7; }
+  &.s2 { top: 20%; left: 82%;  animation-delay: 0.8s;  font-size: 1rem; }
+  &.s3 { top: 72%; left: 7%;   animation-delay: 1.6s;  font-size: 0.6rem; color: #FFB7C5; }
+  &.s4 { top: 80%; left: 88%;  animation-delay: 0.4s;  font-size: 0.8rem; }
+  &.s5 { top: 35%; left: 93%;  animation-delay: 2.1s;  font-size: 0.65rem; color: #D4A8C7; }
+  &.s6 { top: 60%; left: 4%;   animation-delay: 1.2s;  font-size: 0.9rem; }
+  &.s7 { top: 8%;  left: 48%;  animation-delay: 3.0s;  font-size: 0.55rem; color: #FFB7C5; }
+  &.s8 { top: 88%; left: 55%;  animation-delay: 1.8s;  font-size: 0.75rem; color: #D4A8C7; }
+}
+
+// ── Content ────────────────────────────────────────────────────────────────
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $sp-8;
+  pointer-events: auto;
+}
+
+// ── Title block ────────────────────────────────────────────────────────────
+
+.title-block {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $sp-3;
+}
+
+.eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: $fs-xs;
+  letter-spacing: 6px;
+  color: #D4A8C7;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.title {
+  font-family: $font-family;
+  font-weight: 900;
+  font-size: $fs-7xl;
+  margin: 0;
+  @include gold-gradient-text;
+}
+
+.subtitle {
+  font-family: $font-family;
+  font-weight: 300;
+  font-size: $fs-body;
+  color: #B89EC0;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+// ── Circle stage ───────────────────────────────────────────────────────────
+
+.circle-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.seal {
+  width: 280px;
+  height: 280px;
+  display: block;
+
+  .spin-cw-slow    { transform-origin: 150px 150px; animation: spin-cw   28s linear infinite; }
+  .spin-ccw-slow   { transform-origin: 150px 150px; animation: spin-ccw  36s linear infinite; }
+  .spin-cw-medium  { transform-origin: 150px 150px; animation: spin-cw   18s linear infinite; }
+  .spin-ccw-medium { transform-origin: 150px 150px; animation: spin-ccw  22s linear infinite; }
+}
+
+// ── Input panel ────────────────────────────────────────────────────────────
+
+.input-panel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: $sp-2;
+  width: 300px;
+}
+
+.question-input {
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 135, 162, 0.35);
+  border-radius: $radius-md;
+  padding: $sp-6 $sp-7;
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: $fs-body;
+  color: #5a3060;
+  resize: none;
+  outline: none;
+  line-height: 1.6;
+  transition: border-color 0.3s, box-shadow 0.3s;
+
+  &::placeholder {
+    color: rgba(176, 140, 190, 0.65);
+    font-size: $fs-sm;
+  }
+
+  &:focus {
+    border-color: rgba(255, 135, 162, 0.7);
+    box-shadow:
+      0 0 0 3px rgba(255, 135, 162, 0.12),
+      0 0 20px rgba(255, 135, 162, 0.18);
+  }
+}
+
+.char-count {
+  font-family: $font-family;
+  font-size: $fs-xxs;
+  color: rgba(180, 140, 190, 0.6);
+  letter-spacing: 1px;
+}
+
+// ── Submit button ──────────────────────────────────────────────────────────
+
+.submit-btn {
+  display: flex;
+  align-items: center;
+  gap: $sp-5;
+  padding: $sp-6 $sp-13;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255, 135, 162, 0.4);
+  border-radius: $radius-pill;
+  cursor: pointer;
+  transition: all 0.35s ease;
+
+  .btn-label {
+    font-family: 'Cinzel', serif;
+    font-size: $fs-md;
+    letter-spacing: 5px;
+    color: #C4789A;
+    transition: color 0.3s;
+  }
+
+  .btn-deco {
+    font-size: 0.55rem;
+    color: #FFB7C5;
+    transition: color 0.3s, transform 0.3s;
+    animation: twinkle 2.5s ease-in-out infinite;
+
+    &:last-child { animation-delay: 1.25s; }
+  }
+
+  &:hover,
+  &.ready {
+    border-color: rgba(255, 135, 162, 0.75);
+    background: rgba(255, 183, 197, 0.22);
+    box-shadow:
+      0 0 28px rgba(255, 135, 162, 0.22),
+      0 8px 30px rgba(212, 168, 199, 0.15);
+
+    .btn-label { color: #A05878; }
+    .btn-deco  { color: #FF87A2; transform: scale(1.3); }
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}

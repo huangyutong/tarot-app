@@ -1,0 +1,143 @@
+<section class="question-page">
+
+  <!-- Floating stars -->
+  <div class="stars" aria-hidden="true">
+    <span class="star s1">✦</span>
+    <span class="star s2">✧</span>
+    <span class="star s3">★</span>
+    <span class="star s4">✦</span>
+    <span class="star s5">✧</span>
+    <span class="star s6">✦</span>
+    <span class="star s7">★</span>
+    <span class="star s8">✧</span>
+  </div>
+
+  <!-- Main content -->
+  <div class="content">
+
+    <!-- Title -->
+    <header class="title-block">
+      <p class="eyebrow">C L O W  C A R D S</p>
+      <h1 class="title">塔羅占卜</h1>
+      <p class="subtitle">讓星光聆聽你心底的問題</p>
+    </header>
+
+    <!-- Magic circle + input -->
+    <div class="circle-stage">
+
+      <!-- Clow seal SVG -->
+      <svg class="seal" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- Glow fill -->
+        <defs>
+          <radialGradient id="sealGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%"   stop-color="#FF87A2" stop-opacity="0.10"/>
+            <stop offset="60%"  stop-color="#D4A8C7" stop-opacity="0.05"/>
+            <stop offset="100%" stop-color="#FF87A2" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="150" cy="150" r="148" fill="url(#sealGlow)"/>
+
+        <!-- Outermost dashed ring — rotates -->
+        <g class="spin-cw-slow">
+          <circle cx="150" cy="150" r="143" fill="none" stroke="#FF87A2" stroke-width="0.8" stroke-dasharray="2 9" opacity="0.45"/>
+          <!-- 8 diamond gems -->
+          <g transform="rotate(0 150 150)">  <rect x="147.5" y="4"   width="5" height="5" fill="#FF87A2" transform="rotate(45 150 6.5)"  opacity="0.7"/></g>
+          <g transform="rotate(45 150 150)"> <rect x="147.5" y="4"   width="5" height="5" fill="#FF87A2" transform="rotate(45 150 6.5)"  opacity="0.7"/></g>
+          <g transform="rotate(90 150 150)"> <rect x="147.5" y="4"   width="5" height="5" fill="#FF87A2" transform="rotate(45 150 6.5)"  opacity="0.7"/></g>
+          <g transform="rotate(135 150 150)"><rect x="147.5" y="4"   width="5" height="5" fill="#FF87A2" transform="rotate(45 150 6.5)"  opacity="0.7"/></g>
+          <g transform="rotate(180 150 150)"><rect x="147.5" y="4"   width="5" height="5" fill="#FF87A2" transform="rotate(45 150 6.5)"  opacity="0.7"/></g>
+          <g transform="rotate(225 150 150)"><rect x="147.5" y="4"   width="5" height="5" fill="#FF87A2" transform="rotate(45 150 6.5)"  opacity="0.7"/></g>
+          <g transform="rotate(270 150 150)"><rect x="147.5" y="4"   width="5" height="5" fill="#FF87A2" transform="rotate(45 150 6.5)"  opacity="0.7"/></g>
+          <g transform="rotate(315 150 150)"><rect x="147.5" y="4"   width="5" height="5" fill="#FF87A2" transform="rotate(45 150 6.5)"  opacity="0.7"/></g>
+          <!-- 8 small dots between -->
+          <g transform="rotate(22.5 150 150)"> <circle cx="150" cy="7" r="1.8" fill="#FFB7C5" opacity="0.5"/></g>
+          <g transform="rotate(67.5 150 150)"> <circle cx="150" cy="7" r="1.8" fill="#FFB7C5" opacity="0.5"/></g>
+          <g transform="rotate(112.5 150 150)"><circle cx="150" cy="7" r="1.8" fill="#FFB7C5" opacity="0.5"/></g>
+          <g transform="rotate(157.5 150 150)"><circle cx="150" cy="7" r="1.8" fill="#FFB7C5" opacity="0.5"/></g>
+          <g transform="rotate(202.5 150 150)"><circle cx="150" cy="7" r="1.8" fill="#FFB7C5" opacity="0.5"/></g>
+          <g transform="rotate(247.5 150 150)"><circle cx="150" cy="7" r="1.8" fill="#FFB7C5" opacity="0.5"/></g>
+          <g transform="rotate(292.5 150 150)"><circle cx="150" cy="7" r="1.8" fill="#FFB7C5" opacity="0.5"/></g>
+          <g transform="rotate(337.5 150 150)"><circle cx="150" cy="7" r="1.8" fill="#FFB7C5" opacity="0.5"/></g>
+        </g>
+
+        <!-- Outer band -->
+        <circle cx="150" cy="150" r="128" fill="none" stroke="#FFB7C5" stroke-width="0.6" opacity="0.35"/>
+
+        <!-- 8-pointed star — rotates opposite -->
+        <g class="spin-ccw-slow">
+          <polygon
+            points="150,35 171,99 231,69 201,129 265,150 201,171 231,231 171,201 150,265 129,201 69,231 99,171 35,150 99,129 69,69 129,99"
+            fill="none" stroke="#FF87A2" stroke-width="0.8" opacity="0.30"/>
+        </g>
+
+        <!-- Middle ring — dashed, rotates -->
+        <g class="spin-cw-medium">
+          <circle cx="150" cy="150" r="105" fill="none" stroke="#D4A8C7" stroke-width="1" stroke-dasharray="5 5" opacity="0.45"/>
+          <!-- 4 cross marks at cardinals -->
+          <g transform="rotate(0 150 150)">  <line x1="150" y1="42"  x2="150" y2="52"  stroke="#D4A8C7" stroke-width="1.5" opacity="0.7" stroke-linecap="round"/></g>
+          <g transform="rotate(90 150 150)"> <line x1="150" y1="42"  x2="150" y2="52"  stroke="#D4A8C7" stroke-width="1.5" opacity="0.7" stroke-linecap="round"/></g>
+          <g transform="rotate(180 150 150)"><line x1="150" y1="42"  x2="150" y2="52"  stroke="#D4A8C7" stroke-width="1.5" opacity="0.7" stroke-linecap="round"/></g>
+          <g transform="rotate(270 150 150)"><line x1="150" y1="42"  x2="150" y2="52"  stroke="#D4A8C7" stroke-width="1.5" opacity="0.7" stroke-linecap="round"/></g>
+        </g>
+
+        <!-- Inner solid ring -->
+        <circle cx="150" cy="150" r="82" fill="none" stroke="#FF87A2" stroke-width="1" opacity="0.45"/>
+
+        <!-- Moon crescent at top -->
+        <g opacity="0.6">
+          <circle cx="150" cy="90" r="9"   fill="#FFB7C5"/>
+          <circle cx="153" cy="88" r="7.2" fill="url(#sealGlow)" style="fill:rgba(248,245,250,0.95)"/>
+        </g>
+
+        <!-- Star at bottom -->
+        <polygon points="150,210 152.9,218.5 161.8,218.5 154.8,223.6 157.6,232.1 150,227.1 142.4,232.1 145.2,223.6 138.2,218.5 147.1,218.5"
+                 fill="#FF87A2" opacity="0.6"/>
+
+        <!-- Innermost rotating ring -->
+        <g class="spin-ccw-medium">
+          <circle cx="150" cy="150" r="58" fill="none" stroke="#FFB7C5" stroke-width="0.8" stroke-dasharray="3 7" opacity="0.5"/>
+        </g>
+
+        <!-- Center circle -->
+        <circle cx="150" cy="150" r="44" fill="none" stroke="#FF87A2" stroke-width="1.2" opacity="0.5"/>
+
+        <!-- Center 4-petal blossom -->
+        <g opacity="0.35">
+          <ellipse cx="150" cy="133" rx="5" ry="9"  fill="#FF87A2"/>
+          <ellipse cx="150" cy="167" rx="5" ry="9"  fill="#FF87A2"/>
+          <ellipse cx="133" cy="150" rx="9" ry="5"  fill="#FF87A2"/>
+          <ellipse cx="167" cy="150" rx="9" ry="5"  fill="#FF87A2"/>
+        </g>
+        <circle cx="150" cy="150" r="6" fill="#FF87A2" opacity="0.5"/>
+      </svg>
+
+      <!-- Input panel -->
+      <div class="input-panel">
+        <textarea
+          class="question-input"
+          [(ngModel)]="question"
+          (keydown)="onKeydown($event)"
+          placeholder="說出你的問題，讓星光引導你…"
+          rows="5"
+          maxlength="120"
+        ></textarea>
+        <div class="char-count">{{ question.length }} / 120</div>
+      </div>
+
+    </div>
+
+    <!-- Submit button -->
+    <button
+      class="submit-btn"
+      [class.ready]="question.trim().length > 0"
+      (click)="submit()"
+      type="button"
+    >
+      <span class="btn-deco">✦</span>
+      <span class="btn-label">召喚命運</span>
+      <span class="btn-deco">✦</span>
+    </button>
+
+  </div>
+
+</section>

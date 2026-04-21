@@ -1,0 +1,159 @@
+<!-- ── Shuffle phase ─────────────────────────────────────────────────────── -->
+@if (phase === 'shuffle') {
+  <div class="shuffle-scene">
+    <p class="phase-label">命運之牌，正在洗牌…</p>
+    <div class="deck">
+      @for (i of shuffleSlots; track i) {
+        <div class="deck-card shuf-{{ i }}" [style.z-index]="7 - i"></div>
+      }
+    </div>
+  </div>
+}
+
+<!-- ── Spread & Select phase ─────────────────────────────────────────────── -->
+@if (phase === 'spread' || phase === 'select') {
+  <div class="select-scene">
+
+    <p class="phase-label">
+      @if (selectedIndex === -1) { 選擇一張牌，讓命運引導你 }
+      @else { 命運已選定… }
+    </p>
+
+    <!-- Dark backdrop + close button during reveal -->
+    @if (selectedIndex !== -1) {
+      <div class="reveal-backdrop"></div>
+    }
+    @if (showClose) {
+      <button class="close-btn" (click)="closeReveal()">
+        <span class="close-deco">✦</span>
+        <span class="close-label">繼續抽牌</span>
+        <span class="close-deco">✦</span>
+      </button>
+    }
+
+    <div class="card-fan">
+      @for (item of cards; track item.card.en; let i = $index) {
+
+        <button
+          class="tarot-card"
+          [class.spreading]="phase === 'spread'"
+          [class.selectable]="phase === 'select' && !pickedIndices.has(i)"
+          [class.chosen]="selectedIndex === i"
+          [class.unchosen]="selectedIndex !== -1 && selectedIndex !== i"
+          [class.picked]="pickedIndices.has(i)"
+          [style.--i]="i"
+          [disabled]="phase !== 'select' || selectedIndex !== -1 || pickedIndices.has(i)"
+          (click)="pick(i)"
+          aria-label="選擇這張牌"
+        >
+          <!-- ── 3-D Flipper ───────────────────────────────────────────── -->
+          <div class="flipper"
+               [class.do-flip]="selectedIndex === i && isFlipping"
+               [class.is-flipped]="pickedIndices.has(i)">
+
+            <!-- Back face -->
+            <div class="face back">
+              <svg class="card-svg" viewBox="0 0 72 124" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                  <filter id="aurora-blur" x="-80%" y="-80%" width="260%" height="260%">
+                    <feGaussianBlur stdDeviation="10"/>
+                  </filter>
+                  <clipPath id="card-clip">
+                    <rect width="72" height="124" rx="6"/>
+                  </clipPath>
+                </defs>
+                <rect width="72" height="124" rx="6" fill="#ece7e0"/>
+                <g clip-path="url(#card-clip)" filter="url(#aurora-blur)">
+                  <ellipse cx="18" cy="38" rx="28" ry="26" fill="rgba(255,160,175,0.62)"/>
+                  <ellipse cx="58" cy="55" rx="26" ry="30" fill="rgba(185,155,230,0.58)"/>
+                  <ellipse cx="28" cy="98" rx="30" ry="22" fill="rgba(145,195,235,0.50)"/>
+                  <ellipse cx="56" cy="22" rx="20" ry="18" fill="rgba(220,195,245,0.52)"/>
+                  <ellipse cx="36" cy="68" rx="22" ry="18" fill="rgba(255,190,210,0.35)"/>
+                </g>
+                <rect x="2.5" y="2.5" width="67" height="119" rx="5" fill="none" stroke="rgba(60,40,40,0.3)" stroke-width="0.55"/>
+                <rect x="13" y="24" width="46" height="76" rx="23" fill="none" stroke="rgba(50,35,35,0.42)" stroke-width="0.65"/>
+                <path d="M 57,13 L 57.55,15.45 L 60,16 L 57.55,16.55 L 57,19 L 56.45,16.55 L 54,16 L 56.45,15.45 Z" fill="rgba(40,30,30,0.55)"/>
+                <path d="M 14,20 L 14.42,21.58 L 16,22 L 14.42,22.42 L 14,24 L 13.58,22.42 L 12,22 L 13.58,21.58 Z" fill="rgba(40,30,30,0.5)"/>
+                <path d="M 47,9 L 47.28,10.22 L 48.5,10.5 L 47.28,10.78 L 47,12 L 46.72,10.78 L 45.5,10.5 L 46.72,10.22 Z" fill="rgba(40,30,30,0.42)"/>
+                <path d="M 55,64 L 55.28,65.22 L 56.5,65.5 L 55.28,65.78 L 55,67 L 54.72,65.78 L 53.5,65.5 L 54.72,65.22 Z" fill="rgba(40,30,30,0.38)"/>
+                <path d="M 17,60 L 17.22,60.9 L 18.1,61.1 L 17.22,61.3 L 17,62.2 L 16.78,61.3 L 15.9,61.1 L 16.78,60.9 Z" fill="rgba(40,30,30,0.35)"/>
+                <path d="M 13,107 L 13.42,108.58 L 15,109 L 13.42,109.42 L 13,111 L 12.58,109.42 L 11,109 L 12.58,108.58 Z" fill="rgba(40,30,30,0.45)"/>
+                <path d="M 58,112 L 58.25,113 L 59.25,113.25 L 58.25,113.5 L 58,114.5 L 57.75,113.5 L 56.75,113.25 L 57.75,113 Z" fill="rgba(40,30,30,0.38)"/>
+                <path d="M 36,6 L 36.22,6.9 L 37.1,7.1 L 36.22,7.3 L 36,8.2 L 35.78,7.3 L 34.9,7.1 L 35.78,6.9 Z" fill="rgba(40,30,30,0.35)"/>
+                <path d="M 36,106 L 37.8,109 L 36,112 L 34.2,109 Z" fill="none" stroke="rgba(50,35,35,0.38)" stroke-width="0.55"/>
+              </svg>
+            </div>
+
+            <!-- Front face -->
+            <div class="face front">
+              <div class="front-inner" [class.reversed]="item.isReversed">
+
+                <!-- Background: anime illustration or aurora fallback -->
+                <div class="front-bg"
+                     [class.has-sprite]="!!cardSpriteStyles[i]"
+                     [style.background]="cardSpriteStyles[i]">
+                  @if (!cardSpriteStyles[i]) {
+                    <div class="fb fb1"></div>
+                    <div class="fb fb2"></div>
+                    <div class="fb fb3"></div>
+                  }
+                </div>
+
+                <!-- Holographic rainbow shimmer (activates post-flip) -->
+                <div class="holo-shimmer"></div>
+
+                <!-- Thin border frame -->
+                <div class="front-frame"></div>
+
+                <!-- Illustration overlay (card has sprite art) -->
+                @if (cardSpriteStyles[i]) {
+                  <div class="sprite-overlay">
+                    <div class="sprite-num">{{ item.card.num }}</div>
+                    <div class="sprite-name">{{ item.card.en }}</div>
+                  </div>
+                } @else {
+                  <!-- Aurora fallback content -->
+                  <div class="front-content">
+                    <div class="card-num">{{ item.card.num }}</div>
+                    <div class="card-emoji">{{ item.card.emoji }}</div>
+                    <div class="card-name">{{ item.card.name }}</div>
+                    <div class="card-en">{{ item.card.en }}</div>
+                    <div class="kw-divider"></div>
+                    <div class="kw-row">
+                      @for (kw of item.card.keywords.slice(0, 3); track kw) {
+                        <span class="kw">{{ kw }}</span>
+                      }
+                    </div>
+                  </div>
+                }
+
+                @if (item.isReversed) {
+                  <div class="reversed-tag">逆位</div>
+                }
+
+              </div><!-- /front-inner -->
+            </div><!-- /face.front -->
+
+          </div><!-- /flipper -->
+
+          <!-- ── Mid-flip white flash ──────────────────────────────────── -->
+          @if (selectedIndex === i && isFlipping) {
+            <div class="flip-flash"></div>
+          }
+
+          <!-- ── Sparkle burst particles ───────────────────────────────── -->
+          @if (selectedIndex === i && isFlipping) {
+            <div class="burst" aria-hidden="true">
+              @for (b of burstSlots; track b) {
+                <span class="bp b{{ b }}">✦</span>
+              }
+            </div>
+          }
+
+        </button>
+
+      }
+    </div><!-- /card-fan -->
+
+  </div><!-- /select-scene -->
+}
