@@ -1,0 +1,331 @@
+<div class="homepage">
+
+  <!-- Aurora background blobs -->
+  <div class="aurora">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    <div class="blob b4"></div>
+  </div>
+
+  <!-- Title -->
+  <div class="title-area">
+    <div class="deco-line"><span>✦</span><span class="line"></span><span>✦</span><span class="line"></span><span>✦</span></div>
+    <h1 class="title">命運塔羅</h1>
+    <p class="subtitle">讓星光引領你的路</p>
+  </div>
+
+  <!-- Main SVG scene -->
+  <svg class="scene" viewBox="0 0 1000 520" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet">
+    <defs>
+      <!-- Roller coaster motion path -->
+      <path id="rc-motion" d="M -40,155 Q 60,88 145,138 Q 230,188 330,112 Q 430,36 530,105 Q 630,174 720,132 Q 800,98 1040,148"/>
+    </defs>
+
+    <!-- ══ ROLLER COASTER ══ -->
+    <!-- Rails (two parallel paths) -->
+    <path d="M -40,150 Q 60,83 145,133 Q 230,183 330,107 Q 430,31 530,100 Q 630,169 720,127 Q 800,93 1040,143"
+          fill="none" stroke="rgba(40,30,30,0.42)" stroke-width="1.8"/>
+    <path d="M -40,158 Q 60,91 145,141 Q 230,191 330,115 Q 430,39 530,108 Q 630,177 720,135 Q 800,101 1040,151"
+          fill="none" stroke="rgba(40,30,30,0.42)" stroke-width="1.8"/>
+    <!-- Support pillars -->
+    <line x1="145" y1="141" x2="145" y2="195" stroke="rgba(40,30,30,0.35)" stroke-width="1.4"/>
+    <line x1="330" y1="115" x2="330" y2="195" stroke="rgba(40,30,30,0.35)" stroke-width="1.4"/>
+    <line x1="530" y1="108" x2="530" y2="195" stroke="rgba(40,30,30,0.35)" stroke-width="1.4"/>
+    <line x1="720" y1="135" x2="720" y2="195" stroke="rgba(40,30,30,0.35)" stroke-width="1.4"/>
+    <!-- Cross ties -->
+    <line x1="60"  y1="108" x2="60"  y2="118" stroke="rgba(40,30,30,0.32)" stroke-width="1.3"/>
+    <line x1="100" y1="96"  x2="100" y2="106" stroke="rgba(40,30,30,0.32)" stroke-width="1.3"/>
+    <line x1="200" y1="155" x2="200" y2="165" stroke="rgba(40,30,30,0.32)" stroke-width="1.3"/>
+    <line x1="260" y1="140" x2="260" y2="150" stroke="rgba(40,30,30,0.32)" stroke-width="1.3"/>
+    <line x1="400" y1="80"  x2="400" y2="90"  stroke="rgba(40,30,30,0.32)" stroke-width="1.3"/>
+    <line x1="460" y1="95"  x2="460" y2="105" stroke="rgba(40,30,30,0.32)" stroke-width="1.3"/>
+    <line x1="600" y1="162" x2="600" y2="172" stroke="rgba(40,30,30,0.32)" stroke-width="1.3"/>
+    <line x1="660" y1="148" x2="660" y2="158" stroke="rgba(40,30,30,0.32)" stroke-width="1.3"/>
+    <line x1="780" y1="110" x2="780" y2="120" stroke="rgba(40,30,30,0.32)" stroke-width="1.3"/>
+    <!-- Car -->
+    <g class="rc-car">
+      <animateMotion dur="14s" repeatCount="indefinite" rotate="auto">
+        <mpath href="#rc-motion"/>
+      </animateMotion>
+      <rect x="-22" y="-16" width="44" height="24" rx="7"
+            fill="rgba(255,183,197,0.82)" stroke="rgba(40,30,30,0.55)" stroke-width="1.5"/>
+      <rect x="-16" y="-22" width="13" height="9" rx="3"
+            fill="rgba(185,155,230,0.75)" stroke="rgba(40,30,30,0.45)" stroke-width="1"/>
+      <rect x="3"   y="-22" width="13" height="9" rx="3"
+            fill="rgba(145,195,235,0.75)" stroke="rgba(40,30,30,0.45)" stroke-width="1"/>
+      <!-- wheels -->
+      <circle cx="-14" cy="8" r="5" fill="rgba(236,232,224,0.9)" stroke="rgba(40,30,30,0.5)" stroke-width="1"/>
+      <circle cx="14"  cy="8" r="5" fill="rgba(236,232,224,0.9)" stroke="rgba(40,30,30,0.5)" stroke-width="1"/>
+    </g>
+
+    <!-- ══ CLOUDS ══ -->
+    <g class="cloud c1">
+      <ellipse cx="80"  cy="52" rx="38" ry="24" fill="rgba(255,255,255,0.82)" stroke="rgba(40,30,30,0.18)" stroke-width="1"/>
+      <ellipse cx="108" cy="42" rx="30" ry="22" fill="rgba(255,255,255,0.82)" stroke="rgba(40,30,30,0.18)" stroke-width="1"/>
+      <ellipse cx="54"  cy="47" rx="26" ry="18" fill="rgba(255,255,255,0.82)" stroke="rgba(40,30,30,0.18)" stroke-width="1"/>
+    </g>
+    <g class="cloud c2">
+      <ellipse cx="430" cy="34" rx="46" ry="27" fill="rgba(255,255,255,0.76)" stroke="rgba(40,30,30,0.16)" stroke-width="1"/>
+      <ellipse cx="468" cy="24" rx="33" ry="23" fill="rgba(255,255,255,0.76)" stroke="rgba(40,30,30,0.16)" stroke-width="1"/>
+      <ellipse cx="394" cy="30" rx="30" ry="20" fill="rgba(255,255,255,0.76)" stroke="rgba(40,30,30,0.16)" stroke-width="1"/>
+    </g>
+    <g class="cloud c3">
+      <ellipse cx="870" cy="50" rx="36" ry="22" fill="rgba(255,255,255,0.72)" stroke="rgba(40,30,30,0.16)" stroke-width="1"/>
+      <ellipse cx="898" cy="40" rx="26" ry="19" fill="rgba(255,255,255,0.72)" stroke="rgba(40,30,30,0.16)" stroke-width="1"/>
+      <ellipse cx="846" cy="46" rx="24" ry="16" fill="rgba(255,255,255,0.72)" stroke="rgba(40,30,30,0.16)" stroke-width="1"/>
+    </g>
+
+    <!-- ══ FERRIS WHEEL (right side, center 828,295) ══ -->
+    <!-- Support structure -->
+    <line x1="750" y1="388" x2="720" y2="450" stroke="rgba(40,30,30,0.48)" stroke-width="1.8"/>
+    <line x1="906" y1="388" x2="936" y2="450" stroke="rgba(40,30,30,0.48)" stroke-width="1.8"/>
+    <line x1="760" y1="400" x2="728" y2="450" stroke="rgba(40,30,30,0.38)" stroke-width="1.3"/>
+    <line x1="896" y1="400" x2="928" y2="450" stroke="rgba(40,30,30,0.38)" stroke-width="1.3"/>
+    <line x1="720" y1="450" x2="936" y2="450" stroke="rgba(40,30,30,0.42)" stroke-width="1.8"/>
+    <!-- Rotating wheel -->
+    <g class="fw-wheel">
+      <animateTransform attributeName="transform" type="rotate"
+        from="0 828 295" to="360 828 295" dur="20s" repeatCount="indefinite"/>
+      <circle cx="828" cy="295" r="108" fill="none" stroke="rgba(40,30,30,0.48)" stroke-width="1.8"/>
+      <circle cx="828" cy="295" r="66"  fill="none" stroke="rgba(40,30,30,0.25)" stroke-width="1"/>
+      <circle cx="828" cy="295" r="14"  fill="rgba(255,183,197,0.55)" stroke="rgba(40,30,30,0.48)" stroke-width="1.5"/>
+      <!-- 8 spokes -->
+      <line x1="828" y1="295" x2="828" y2="187" stroke="rgba(40,30,30,0.42)" stroke-width="1.3"/>
+      <line x1="828" y1="295" x2="904" y2="219" stroke="rgba(40,30,30,0.42)" stroke-width="1.3"/>
+      <line x1="828" y1="295" x2="936" y2="295" stroke="rgba(40,30,30,0.42)" stroke-width="1.3"/>
+      <line x1="828" y1="295" x2="904" y2="371" stroke="rgba(40,30,30,0.42)" stroke-width="1.3"/>
+      <line x1="828" y1="295" x2="828" y2="403" stroke="rgba(40,30,30,0.42)" stroke-width="1.3"/>
+      <line x1="828" y1="295" x2="752" y2="371" stroke="rgba(40,30,30,0.42)" stroke-width="1.3"/>
+      <line x1="828" y1="295" x2="720" y2="295" stroke="rgba(40,30,30,0.42)" stroke-width="1.3"/>
+      <line x1="828" y1="295" x2="752" y2="219" stroke="rgba(40,30,30,0.42)" stroke-width="1.3"/>
+      <!-- 8 gondolas -->
+      <rect x="814" y="175" width="28" height="20" rx="5" fill="rgba(255,183,197,0.68)" stroke="rgba(40,30,30,0.48)" stroke-width="1.2"/>
+      <rect x="893" y="208" width="24" height="18" rx="4" fill="rgba(185,155,230,0.68)" stroke="rgba(40,30,30,0.48)" stroke-width="1.2"/>
+      <rect x="925" y="285" width="24" height="18" rx="4" fill="rgba(145,195,235,0.68)" stroke="rgba(40,30,30,0.48)" stroke-width="1.2"/>
+      <rect x="893" y="362" width="24" height="18" rx="4" fill="rgba(255,222,180,0.68)" stroke="rgba(40,30,30,0.48)" stroke-width="1.2"/>
+      <rect x="814" y="392" width="28" height="20" rx="5" fill="rgba(255,183,197,0.68)" stroke="rgba(40,30,30,0.48)" stroke-width="1.2"/>
+      <rect x="739" y="362" width="24" height="18" rx="4" fill="rgba(185,155,230,0.68)" stroke="rgba(40,30,30,0.48)" stroke-width="1.2"/>
+      <rect x="707" y="285" width="24" height="18" rx="4" fill="rgba(145,195,235,0.68)" stroke="rgba(40,30,30,0.48)" stroke-width="1.2"/>
+      <rect x="739" y="208" width="24" height="18" rx="4" fill="rgba(255,222,180,0.68)" stroke="rgba(40,30,30,0.48)" stroke-width="1.2"/>
+    </g>
+
+    <!-- ══ CAROUSEL (left side, center 178,340) ══ -->
+    <!-- Central pole -->
+    <line x1="178" y1="448" x2="178" y2="268" stroke="rgba(40,30,30,0.48)" stroke-width="2.5"/>
+    <!-- Canopy roof -->
+    <path d="M 92,292 Q 178,248 264,292" fill="rgba(255,183,197,0.5)" stroke="rgba(40,30,30,0.48)" stroke-width="1.5"/>
+    <!-- Canopy frills -->
+    <path d="M 92,292 Q 102,301 113,292 Q 124,283 135,292 Q 146,301 157,292 Q 168,283 178,292 Q 188,301 199,292 Q 210,283 221,292 Q 232,301 243,292 Q 254,283 264,292"
+          fill="none" stroke="rgba(40,30,30,0.38)" stroke-width="1.1"/>
+    <!-- Top flag -->
+    <line x1="178" y1="268" x2="178" y2="244" stroke="rgba(40,30,30,0.48)" stroke-width="1.5"/>
+    <path d="M 178,244 L 196,251 L 178,258 Z" fill="rgba(255,183,197,0.82)" stroke="rgba(40,30,30,0.38)" stroke-width="1"/>
+    <!-- Spinning section -->
+    <g class="carousel-spin">
+      <animateTransform attributeName="transform" type="rotate"
+        from="0 178 360" to="360 178 360" dur="9s" repeatCount="indefinite"/>
+      <!-- Strings from canopy to horses -->
+      <line x1="178" y1="292" x2="102" y2="340" stroke="rgba(40,30,30,0.32)" stroke-width="1"/>
+      <line x1="178" y1="292" x2="254" y2="340" stroke="rgba(40,30,30,0.32)" stroke-width="1"/>
+      <line x1="178" y1="292" x2="178" y2="358" stroke="rgba(40,30,30,0.32)" stroke-width="1"/>
+      <!-- Platform disc -->
+      <ellipse cx="178" cy="432" rx="82" ry="15" fill="rgba(185,155,230,0.45)" stroke="rgba(40,30,30,0.38)" stroke-width="1.2"/>
+      <!-- Horse 1 left -->
+      <g transform="translate(102,328)">
+        <ellipse cx="0" cy="6" rx="22" ry="14" fill="rgba(236,232,224,0.95)" stroke="rgba(40,30,30,0.48)" stroke-width="1.2" transform="rotate(-12)"/>
+        <circle cx="18" cy="-8" r="10" fill="rgba(236,232,224,0.95)" stroke="rgba(40,30,30,0.48)" stroke-width="1.2"/>
+        <path d="M 10,-16 Q 15,-9 19,-4" fill="none" stroke="rgba(185,155,230,0.85)" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="-8"  y1="18" x2="-10" y2="34" stroke="rgba(40,30,30,0.48)" stroke-width="1.5"/>
+        <line x1="4"   y1="19" x2="4"   y2="35" stroke="rgba(40,30,30,0.48)" stroke-width="1.5"/>
+        <line x1="14"  y1="18" x2="16"  y2="34" stroke="rgba(40,30,30,0.48)" stroke-width="1.5"/>
+      </g>
+      <!-- Horse 2 right -->
+      <g transform="translate(254,328)">
+        <ellipse cx="0" cy="6" rx="22" ry="14" fill="rgba(236,232,224,0.95)" stroke="rgba(40,30,30,0.48)" stroke-width="1.2" transform="rotate(12)"/>
+        <circle cx="-18" cy="-8" r="10" fill="rgba(236,232,224,0.95)" stroke="rgba(40,30,30,0.48)" stroke-width="1.2"/>
+        <path d="M -10,-16 Q -15,-9 -19,-4" fill="none" stroke="rgba(255,183,197,0.85)" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="8"   y1="18" x2="10"  y2="34" stroke="rgba(40,30,30,0.48)" stroke-width="1.5"/>
+        <line x1="-4"  y1="19" x2="-4"  y2="35" stroke="rgba(40,30,30,0.48)" stroke-width="1.5"/>
+        <line x1="-14" y1="18" x2="-16" y2="34" stroke="rgba(40,30,30,0.48)" stroke-width="1.5"/>
+      </g>
+      <!-- Horse 3 back center -->
+      <g transform="translate(178,346)">
+        <ellipse cx="0" cy="5" rx="19" ry="12" fill="rgba(236,232,224,0.95)" stroke="rgba(40,30,30,0.48)" stroke-width="1.2"/>
+        <circle cx="15" cy="-6" r="9" fill="rgba(236,232,224,0.95)" stroke="rgba(40,30,30,0.48)" stroke-width="1.2"/>
+        <path d="M 8,-13 Q 13,-7 16,-2" fill="none" stroke="rgba(145,195,235,0.85)" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="-6"  y1="15" x2="-7"  y2="29" stroke="rgba(40,30,30,0.48)" stroke-width="1.5"/>
+        <line x1="6"   y1="16" x2="6"   y2="30" stroke="rgba(40,30,30,0.48)" stroke-width="1.5"/>
+      </g>
+    </g>
+
+    <!-- ══ BALLOONS ══ -->
+    <g class="balloon bl1">
+      <ellipse cx="578" cy="188" rx="23" ry="27" fill="rgba(255,183,197,0.78)" stroke="rgba(40,30,30,0.38)" stroke-width="1.2"/>
+      <ellipse cx="571" cy="180" rx="7"  ry="9"  fill="rgba(255,255,255,0.38)"/>
+      <path d="M 578,215 Q 576,230 578,248" fill="none" stroke="rgba(40,30,30,0.35)" stroke-width="1"/>
+    </g>
+    <g class="balloon bl2">
+      <ellipse cx="614" cy="155" rx="21" ry="25" fill="rgba(185,155,230,0.78)" stroke="rgba(40,30,30,0.38)" stroke-width="1.2"/>
+      <ellipse cx="607" cy="148" rx="6"  ry="8"  fill="rgba(255,255,255,0.38)"/>
+      <path d="M 614,180 Q 612,195 614,212" fill="none" stroke="rgba(40,30,30,0.35)" stroke-width="1"/>
+    </g>
+    <g class="balloon bl3">
+      <ellipse cx="648" cy="198" rx="20" ry="24" fill="rgba(145,195,235,0.78)" stroke="rgba(40,30,30,0.38)" stroke-width="1.2"/>
+      <ellipse cx="641" cy="191" rx="6"  ry="7"  fill="rgba(255,255,255,0.38)"/>
+      <path d="M 648,222 Q 646,237 648,252" fill="none" stroke="rgba(40,30,30,0.35)" stroke-width="1"/>
+    </g>
+    <g class="balloon bl4">
+      <ellipse cx="596" cy="232" rx="19" ry="23" fill="rgba(255,228,160,0.78)" stroke="rgba(40,30,30,0.38)" stroke-width="1.2"/>
+      <ellipse cx="589" cy="225" rx="5"  ry="7"  fill="rgba(255,255,255,0.38)"/>
+      <path d="M 596,255 Q 594,268 596,282" fill="none" stroke="rgba(40,30,30,0.35)" stroke-width="1"/>
+    </g>
+
+    <!-- ══ CAT CHARACTER (三花貓, centre ~490,360) ══ -->
+    <g class="cat">
+      <!-- Tail behind body -->
+      <path d="M 522,432 Q 562,408 558,372 Q 554,350 538,358"
+            fill="none" stroke="rgba(40,30,30,0.56)" stroke-width="2.4" stroke-linecap="round"/>
+      <!-- Body -->
+      <ellipse cx="488" cy="408" rx="48" ry="40"
+               fill="rgba(236,232,224,0.97)" stroke="rgba(40,30,30,0.56)" stroke-width="1.9"/>
+      <!-- Body black patch -->
+      <path d="M 460,392 Q 469,376 485,381 Q 491,392 475,408 Q 463,414 460,392 Z"
+            fill="rgba(42,30,30,0.72)" stroke="none"/>
+      <!-- Head -->
+      <circle cx="488" cy="348" r="50"
+              fill="rgba(236,232,224,0.97)" stroke="rgba(40,30,30,0.56)" stroke-width="1.9"/>
+      <!-- Head orange patch -->
+      <path d="M 504,304 Q 536,312 534,338 Q 525,353 510,347 Q 497,333 504,304 Z"
+            fill="rgba(232,147,90,0.72)" stroke="none"/>
+      <!-- Head black patch -->
+      <path d="M 450,322 Q 457,301 472,307 Q 479,318 468,334 Q 457,340 450,322 Z"
+            fill="rgba(42,30,30,0.72)" stroke="none"/>
+      <!-- Left ear -->
+      <path d="M 450,308 L 437,272 L 468,286 Z"
+            fill="rgba(236,232,224,0.97)" stroke="rgba(40,30,30,0.56)" stroke-width="1.9"/>
+      <path d="M 452,305 L 444,278 L 465,289 Z" fill="rgba(255,160,175,0.62)"/>
+      <!-- Right ear -->
+      <path d="M 526,308 L 539,272 L 508,286 Z"
+            fill="rgba(236,232,224,0.97)" stroke="rgba(40,30,30,0.56)" stroke-width="1.9"/>
+      <path d="M 524,305 L 531,278 L 511,289 Z" fill="rgba(232,147,90,0.62)"/>
+      <!-- Eyes -->
+      <circle cx="472" cy="342" r="8" fill="rgba(40,30,30,0.88)"/>
+      <circle cx="504" cy="342" r="8" fill="rgba(40,30,30,0.88)"/>
+      <circle cx="475" cy="339" r="3" fill="rgba(255,255,255,0.92)"/>
+      <circle cx="507" cy="339" r="3" fill="rgba(255,255,255,0.92)"/>
+      <!-- Blush -->
+      <ellipse cx="464" cy="352" rx="8" ry="5" fill="rgba(255,160,175,0.38)"/>
+      <ellipse cx="512" cy="352" rx="8" ry="5" fill="rgba(255,160,175,0.38)"/>
+      <!-- Nose -->
+      <path d="M 485,354 L 491,354 L 488,358 Z" fill="rgba(232,147,90,0.85)"/>
+      <!-- Mouth -->
+      <path d="M 481,361 Q 488,367 495,361"
+            fill="none" stroke="rgba(40,30,30,0.52)" stroke-width="1.5" stroke-linecap="round"/>
+      <!-- Whiskers left -->
+      <line x1="440" y1="351" x2="474" y2="354" stroke="rgba(40,30,30,0.36)" stroke-width="0.9"/>
+      <line x1="438" y1="357" x2="473" y2="357" stroke="rgba(40,30,30,0.36)" stroke-width="0.9"/>
+      <line x1="441" y1="363" x2="474" y2="360" stroke="rgba(40,30,30,0.36)" stroke-width="0.9"/>
+      <!-- Whiskers right -->
+      <line x1="536" y1="351" x2="502" y2="354" stroke="rgba(40,30,30,0.36)" stroke-width="0.9"/>
+      <line x1="538" y1="357" x2="503" y2="357" stroke="rgba(40,30,30,0.36)" stroke-width="0.9"/>
+      <line x1="535" y1="363" x2="502" y2="360" stroke="rgba(40,30,30,0.36)" stroke-width="0.9"/>
+      <!-- Paws -->
+      <ellipse cx="462" cy="443" rx="22" ry="13"
+               fill="rgba(236,232,224,0.97)" stroke="rgba(40,30,30,0.56)" stroke-width="1.9"/>
+      <ellipse cx="514" cy="443" rx="22" ry="13"
+               fill="rgba(236,232,224,0.97)" stroke="rgba(40,30,30,0.56)" stroke-width="1.9"/>
+      <!-- Paw toes left -->
+      <path d="M 454,441 Q 456,434 458,441" fill="none" stroke="rgba(40,30,30,0.3)" stroke-width="1"/>
+      <path d="M 461,440 Q 463,433 465,440" fill="none" stroke="rgba(40,30,30,0.3)" stroke-width="1"/>
+      <path d="M 468,441 Q 470,434 472,441" fill="none" stroke="rgba(40,30,30,0.3)" stroke-width="1"/>
+      <!-- Paw toes right -->
+      <path d="M 506,441 Q 508,434 510,441" fill="none" stroke="rgba(40,30,30,0.3)" stroke-width="1"/>
+      <path d="M 513,440 Q 515,433 517,440" fill="none" stroke="rgba(40,30,30,0.3)" stroke-width="1"/>
+      <path d="M 520,441 Q 522,434 524,441" fill="none" stroke="rgba(40,30,30,0.3)" stroke-width="1"/>
+    </g>
+
+    <!-- ══ FLOWERS ══ -->
+    <!-- Flower helper: 4-petal daisy + stem -->
+    <g class="flower fl1" transform="translate(52,442)">
+      <line x1="0" y1="0" x2="0" y2="30" stroke="rgba(100,140,80,0.58)" stroke-width="1.5"/>
+      <ellipse cx="0" cy="-8"  rx="5" ry="7" fill="rgba(255,183,197,0.7)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+      <ellipse cx="8" cy="0"   rx="7" ry="5" fill="rgba(255,183,197,0.7)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+      <ellipse cx="0" cy="8"   rx="5" ry="7" fill="rgba(255,183,197,0.7)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+      <ellipse cx="-8" cy="0"  rx="7" ry="5" fill="rgba(255,183,197,0.7)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+      <circle cx="0" cy="0" r="5" fill="rgba(255,228,160,0.9)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+    </g>
+    <g class="flower fl2" transform="translate(118,447)">
+      <line x1="0" y1="0" x2="0" y2="26" stroke="rgba(100,140,80,0.58)" stroke-width="1.5"/>
+      <ellipse cx="0" cy="-7"  rx="4" ry="6" fill="rgba(185,155,230,0.7)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+      <ellipse cx="7" cy="0"   rx="6" ry="4" fill="rgba(185,155,230,0.7)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+      <ellipse cx="0" cy="7"   rx="4" ry="6" fill="rgba(185,155,230,0.7)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+      <ellipse cx="-7" cy="0"  rx="6" ry="4" fill="rgba(185,155,230,0.7)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+      <circle cx="0" cy="0" r="4" fill="rgba(255,228,160,0.9)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+    </g>
+    <g class="flower fl3" transform="translate(300,444)">
+      <line x1="0" y1="0" x2="0" y2="28" stroke="rgba(100,140,80,0.58)" stroke-width="1.5"/>
+      <ellipse cx="0" cy="-8"  rx="5" ry="7" fill="rgba(145,195,235,0.7)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+      <ellipse cx="8" cy="0"   rx="7" ry="5" fill="rgba(145,195,235,0.7)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+      <ellipse cx="0" cy="8"   rx="5" ry="7" fill="rgba(145,195,235,0.7)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+      <ellipse cx="-8" cy="0"  rx="7" ry="5" fill="rgba(145,195,235,0.7)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+      <circle cx="0" cy="0" r="5" fill="rgba(255,228,160,0.9)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+    </g>
+    <g class="flower fl4" transform="translate(380,449)">
+      <line x1="0" y1="0" x2="0" y2="23" stroke="rgba(100,140,80,0.58)" stroke-width="1.5"/>
+      <ellipse cx="0" cy="-7"  rx="4" ry="6" fill="rgba(255,183,197,0.7)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+      <ellipse cx="7" cy="0"   rx="6" ry="4" fill="rgba(255,183,197,0.7)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+      <ellipse cx="0" cy="7"   rx="4" ry="6" fill="rgba(255,183,197,0.7)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+      <ellipse cx="-7" cy="0"  rx="6" ry="4" fill="rgba(255,183,197,0.7)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+      <circle cx="0" cy="0" r="4" fill="rgba(255,228,160,0.9)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+    </g>
+    <g class="flower fl5" transform="translate(558,446)">
+      <line x1="0" y1="0" x2="0" y2="27" stroke="rgba(100,140,80,0.58)" stroke-width="1.5"/>
+      <ellipse cx="0" cy="-8"  rx="5" ry="7" fill="rgba(185,155,230,0.7)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+      <ellipse cx="8" cy="0"   rx="7" ry="5" fill="rgba(185,155,230,0.7)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+      <ellipse cx="0" cy="8"   rx="5" ry="7" fill="rgba(185,155,230,0.7)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+      <ellipse cx="-8" cy="0"  rx="7" ry="5" fill="rgba(185,155,230,0.7)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+      <circle cx="0" cy="0" r="5" fill="rgba(255,228,160,0.9)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+    </g>
+    <g class="flower fl6" transform="translate(698,443)">
+      <line x1="0" y1="0" x2="0" y2="30" stroke="rgba(100,140,80,0.58)" stroke-width="1.5"/>
+      <ellipse cx="0" cy="-8"  rx="5" ry="7" fill="rgba(145,195,235,0.7)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+      <ellipse cx="8" cy="0"   rx="7" ry="5" fill="rgba(145,195,235,0.7)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+      <ellipse cx="0" cy="8"   rx="5" ry="7" fill="rgba(145,195,235,0.7)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+      <ellipse cx="-8" cy="0"  rx="7" ry="5" fill="rgba(145,195,235,0.7)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+      <circle cx="0" cy="0" r="5" fill="rgba(255,228,160,0.9)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+    </g>
+    <g class="flower fl7" transform="translate(948,448)">
+      <line x1="0" y1="0" x2="0" y2="25" stroke="rgba(100,140,80,0.58)" stroke-width="1.5"/>
+      <ellipse cx="0" cy="-7"  rx="4" ry="6" fill="rgba(255,183,197,0.7)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+      <ellipse cx="7" cy="0"   rx="6" ry="4" fill="rgba(255,183,197,0.7)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+      <ellipse cx="0" cy="7"   rx="4" ry="6" fill="rgba(255,183,197,0.7)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+      <ellipse cx="-7" cy="0"  rx="6" ry="4" fill="rgba(255,183,197,0.7)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+      <circle cx="0" cy="0" r="4" fill="rgba(255,228,160,0.9)" stroke="rgba(40,30,30,0.35)" stroke-width="0.9"/>
+    </g>
+
+    <!-- Ground line -->
+    <path d="M 0,452 Q 250,448 500,452 Q 750,456 1000,452"
+          fill="none" stroke="rgba(40,30,30,0.16)" stroke-width="1"/>
+
+    <!-- ══ SPARKLES ══ -->
+    <path class="sp s1" d="M 28,218 l 1.2,3 3,0.6 -3,0.6 -1.2,3 -1.2,-3 -3,-0.6 3,-0.6 Z" fill="rgba(40,30,30,0.48)"/>
+    <path class="sp s2" d="M 220,85 l 1.4,3.5 3.5,0.7 -3.5,0.7 -1.4,3.5 -1.4,-3.5 -3.5,-0.7 3.5,-0.7 Z" fill="rgba(40,30,30,0.42)"/>
+    <path class="sp s3" d="M 355,258 l 1,2.5 2.5,0.5 -2.5,0.5 -1,2.5 -1,-2.5 -2.5,-0.5 2.5,-0.5 Z" fill="rgba(40,30,30,0.4)"/>
+    <path class="sp s4" d="M 490,82 l 1.5,3.8 3.8,0.75 -3.8,0.75 -1.5,3.8 -1.5,-3.8 -3.8,-0.75 3.8,-0.75 Z" fill="rgba(40,30,30,0.45)"/>
+    <path class="sp s5" d="M 686,248 l 1.1,2.8 2.8,0.55 -2.8,0.55 -1.1,2.8 -1.1,-2.8 -2.8,-0.55 2.8,-0.55 Z" fill="rgba(40,30,30,0.38)"/>
+    <path class="sp s6" d="M 752,388 l 1.2,3 3,0.6 -3,0.6 -1.2,3 -1.2,-3 -3,-0.6 3,-0.6 Z" fill="rgba(40,30,30,0.4)"/>
+    <path class="sp s7" d="M 148,285 l 1,2.4 2.4,0.5 -2.4,0.5 -1,2.4 -1,-2.4 -2.4,-0.5 2.4,-0.5 Z" fill="rgba(40,30,30,0.38)"/>
+    <path class="sp s8" d="M 910,340 l 1.3,3.2 3.2,0.65 -3.2,0.65 -1.3,3.2 -1.3,-3.2 -3.2,-0.65 3.2,-0.65 Z" fill="rgba(40,30,30,0.42)"/>
+    <path class="sp s9" d="M 440,168 l 1.1,2.7 2.7,0.55 -2.7,0.55 -1.1,2.7 -1.1,-2.7 -2.7,-0.55 2.7,-0.55 Z" fill="rgba(40,30,30,0.4)"/>
+    <path class="sp s10" d="M 310,390 l 1,2.5 2.5,0.5 -2.5,0.5 -1,2.5 -1,-2.5 -2.5,-0.5 2.5,-0.5 Z" fill="rgba(40,30,30,0.36)"/>
+  </svg>
+
+  <!-- Enter button -->
+  <button class="enter-btn" (click)="enter.emit()">
+    <span class="btn-deco">✦</span>
+    <span class="btn-text">開始占卜</span>
+    <span class="btn-deco">✦</span>
+  </button>
+
+</div>

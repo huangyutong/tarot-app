@@ -1,7 +1,12 @@
 <app-background-layer></app-background-layer>
 
+@if (phase === 'home') {
+  <app-homepage (enter)="onEnter()"></app-homepage>
+}
+
 @if (phase === 'question') {
   <app-question-input (submitted)="onQuestionSubmitted($event)"></app-question-input>
+  <app-intro-overlay></app-intro-overlay>
 }
 
 @if (phase === 'spread') {
@@ -10,5 +15,3 @@
     (cardPicked)="onCardPicked($event)"
   ></app-card-spread>
 }
-
-<app-intro-overlay></app-intro-overlay>
